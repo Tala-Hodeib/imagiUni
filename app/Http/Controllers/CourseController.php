@@ -42,6 +42,7 @@ class CourseController extends Controller
             'course_code' => 'required', 
             'course_name' => 'required',
         ]);
+
     
         Course::create($request->all());
      

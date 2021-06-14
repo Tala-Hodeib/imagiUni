@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Student extends Migration
+class CreateStudentTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,19 @@ class Student extends Migration
      */
     public function up()
     {
-        Schema::create('student', function (Blueprint $table) {
+        Schema::create('students', function (Blueprint $table) {
             $table->id();
-            $table->integer('student_code');
+            $table->string('student_id')->unique();
+            $table->string('course_id')->unique();
+            $table->string('student_code');
             $table->string('first_name');
             $table->string('father_name');
             $table->string('last_name');
-            $table->integer('mobile_number');
+            $table->string('mobile_number');
             $table->string('email');
             $table->string('password');
-            $table->date('DOB');
+            $table->string('DOB');
+
             $table->timestamps();
         });
     }

@@ -41,6 +41,7 @@ class RegistrationController extends Controller
         $request->validate([
             'course_id' => 'required', 
             'student_id' => 'required',
+            'date_created' => 'required',
         ]);
     
         Registration::create($request->all());
@@ -83,9 +84,10 @@ class RegistrationController extends Controller
         $request->validate([
             'course_id' => 'required', 
             'student_id' => 'required',
+            'date_created' => 'required',
         ]);
     
-        $student->update($request->all());
+        $registration->update($request->all());
     
         return redirect()->route('registration.index')
                         ->with('success','Registration updated successfully');

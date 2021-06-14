@@ -43,10 +43,10 @@ class StudentController extends Controller
             'first_name' => 'required',
             'father_name' => 'required',
             'last_name' => 'required',
-            'mobile_number' => 'required',
+            'mobile_number'  => 'required',
             'email' => 'required',
             'password' => 'required',
-            'DOB' => 'required',
+            'DOB'  => 'required',
         ]);
     
         Student::create($request->all());
