@@ -1,13 +1,13 @@
-@extends('registration.layout')
+@extends('course.layout')
    
 @section('content')
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2>Edit Registration</h2>
+                <h2>Edit Course</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('registration.index') }}"> Back</a>
+                <a class="btn btn-primary" href="{{ route('course.index') }}"> Back</a>
             </div>
         </div>
     </div>
@@ -23,7 +23,7 @@
         </div>
     @endif
   
-    <form action="{{ route('registration.update',$registration->id) }}" method="POST">
+    <form action="{{ route('course.update',$course->id) }}" method="POST">
         @csrf
         @method('PUT')
    
